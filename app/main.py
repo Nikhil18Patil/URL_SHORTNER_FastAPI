@@ -5,7 +5,7 @@ print("🚀 App is starting...")
 from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import url
-from mangum import Mangum
+
 
 Base.metadata.create_all(bind=engine)
 
@@ -20,4 +20,4 @@ def read_root():
         "usage": "Visit /docs for Swagger UI or /redoc for ReDoc to explore and test the API."
     }
 
-handler = Mangum(app)
+
