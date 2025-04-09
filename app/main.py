@@ -3,8 +3,8 @@ logging.basicConfig(level=logging.INFO)
 print("🚀 App is starting...")
 
 from fastapi import FastAPI
-from database import Base, engine
-from routers import url
+from app.database import Base, engine
+from app.routers import url
 from mangum import Mangum
 
 Base.metadata.create_all(bind=engine)
